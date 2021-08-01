@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/yonycalsin/tailwindcss-theme#readme",
   "devDependencies": {
-    "semantic-release": "^17.4.4"
+    "semantic-release": "^17.4.4",
+    "tailwind-config-viewer": "^1.6.2"
   },
   "release": {
     "branches": [
