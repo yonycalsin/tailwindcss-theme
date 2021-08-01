@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "semantic-release": "semantic-release",
-    "preview:build": "tailwind-config-viewer export ./preview-build --config ./dist/index.js",
+    "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
     "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
     "start": "tsdx watch",
     "build": "tsdx build",
