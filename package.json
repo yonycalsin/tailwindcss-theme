@@ -4,7 +4,9 @@
   "description": ".",
   "main": "index.js",
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "preview:build": "tailwind-config-viewer export ./preview-build",
+    "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN"
   },
   "repository": {
     "type": "git",
