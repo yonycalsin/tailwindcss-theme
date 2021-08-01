@@ -1,5 +1,5 @@
 name: Preview Deploy
-on: push
+on: [push]
 jobs:
   deploying:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip deploy]')"
@@ -43,5 +43,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ format('Your review application is ready in http://{1}-{0}.surge.sh', steps.extract_branch.outputs.branch, matrix.preview_prefix) }}
+          msg: ${{ format('Your preview application is ready in http://{1}-{0}.surge.sh', steps.extract_branch.outputs.branch, matrix.preview_prefix) }}
           check_for_duplicate_msg: true
