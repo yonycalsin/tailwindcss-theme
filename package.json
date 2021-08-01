@@ -24,5 +24,8 @@
     "branches": [
       "main"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
