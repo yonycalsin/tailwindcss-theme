@@ -1,7 +1,7 @@
-name: Preview Deploy
+name: Preview CI
 on: [push]
 jobs:
-  deploying:
+  deploy_preview:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip deploy]')"
 
     runs-on: ubuntu-latest
