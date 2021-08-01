@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/yonycalsin/tailwindcss-theme.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Yony Calsin",
   "main": "dist/index.js",
   "module": "dist/tailwindcss-theme.esm.js",
