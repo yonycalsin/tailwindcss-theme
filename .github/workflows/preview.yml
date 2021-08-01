@@ -8,6 +8,8 @@ jobs:
 
     strategy:
       fail-fast: false
+      matrix:
+        preview_prefix: 'yc-tw-theme'
 
     steps:
       - name: Checkout repo
@@ -30,7 +32,7 @@ jobs:
 
       - name: Surge Deploy
         env:
-          PROJECT_NAME: "yc-tw-theme"
+          PROJECT_NAME: ${{ matrix.preview_prefix }}
           BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: npm run preview:deploy
@@ -41,5 +43,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ format('Your review application is ready in http://yc-tw-theme-{0}.surge.sh', steps.extract_branch.outputs.branch) }}
+          msg: ${{ format('Your review application is ready in http://{1}-{0}.surge.sh', steps.extract_branch.outputs.branch, matrix.preview_prefix) }}
           check_for_duplicate_msg: true
