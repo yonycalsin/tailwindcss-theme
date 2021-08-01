@@ -17,8 +17,7 @@
   "module": "dist/tailwindcss-theme.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "semantic-release": "semantic-release",
