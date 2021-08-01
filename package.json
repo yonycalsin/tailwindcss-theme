@@ -21,8 +21,9 @@
   ],
   "scripts": {
     "semantic-release": "semantic-release",
-    "preview:build": "tailwind-config-viewer export ./preview-build",
+    "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
     "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
+    "preview:down": "surge teardown $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
@@ -49,7 +50,9 @@
     "prettier-plugin-packagejson": "^2.2.11",
     "semantic-release": "^17.4.4",
     "size-limit": "^5.0.2",
+    "surge": "^0.23.0",
     "tailwind-config-viewer": "^1.6.2",
+    "tailwindcss": "^2.2.7",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.0",
     "typescript": "^4.3.5"
