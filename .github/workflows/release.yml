@@ -7,8 +7,12 @@ on:
     inputs:
 jobs:
   release:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip release]')"
+
     name: Release
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2

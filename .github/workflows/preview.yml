@@ -2,7 +2,7 @@ name: Preview Deploy
 on: push
 jobs:
   deploying:
-    if: "contains(toJSON(github.event.commits.*.message), '[deploy]')"
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip deploy]')"
 
     runs-on: ubuntu-latest
 
