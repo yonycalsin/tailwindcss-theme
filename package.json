@@ -1,0 +1,23 @@
+{
+  "name": "@yonycalsin/tailwindcss-theme",
+  "version": "1.0.0",
+  "description": ".",
+  "main": "index.js",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yonycalsin/tailwindcss-theme.git"
+  },
+  "keywords": [],
+  "author": "Yony Calsin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yonycalsin/tailwindcss-theme/issues"
+  },
+  "homepage": "https://github.com/yonycalsin/tailwindcss-theme#readme",
+  "devDependencies": {
+    "semantic-release": "^17.4.4"
+  }
+}
