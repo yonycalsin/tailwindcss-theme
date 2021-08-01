@@ -36,7 +36,7 @@ jobs:
         run: npm run preview:deploy
 
       - name: Add comment to Pull Request
-        if: github.ref != 'refs/heads/master'
+        if: github.ref != 'refs/heads/main'
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
