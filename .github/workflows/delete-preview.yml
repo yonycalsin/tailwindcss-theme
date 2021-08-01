@@ -34,7 +34,7 @@ jobs:
       - name: Surge Down
         env:
           PROJECT_NAME: 'yc-tw-theme'
-          BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
+          BRANCH_NAME: ${{ github.ref }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: npm run preview:down
 
