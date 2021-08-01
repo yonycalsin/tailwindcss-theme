@@ -1,7 +1,7 @@
 import colors from './colors'
 import spacing from './spacing'
 
-export default {
+const customTheme = {
   darkMode: 'class',
   theme: {
     colors,
@@ -12,3 +12,7 @@ export default {
     },
   },
 }
+
+module.exports = customTheme
+
+export default customTheme
