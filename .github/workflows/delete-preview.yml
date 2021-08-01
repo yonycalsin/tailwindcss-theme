@@ -36,6 +36,7 @@ jobs:
           PROJECT_NAME: 'yc-tw-theme'
           BRANCH_NAME: ${{ github.ref }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        shell: bash
         run: |
           npm run preview:down
           printf "-> %o" "${{github.event.pull_request}}"
