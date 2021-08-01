@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        preview_prefix: 'yc-tw-theme'
+        preview_prefix: yc-tw-theme
 
     steps:
       - name: Checkout repo
