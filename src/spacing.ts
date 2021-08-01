@@ -1,4 +1,4 @@
-const spacingSize = 30
+const spacingSize = 8
 
 export const getSpacing = (count = 50) =>
   Array.from({ length: count + 1 }).map((_, index) => `${index * spacingSize}px`)
