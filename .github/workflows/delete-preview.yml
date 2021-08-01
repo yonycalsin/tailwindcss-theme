@@ -1,10 +1,13 @@
-name: Preview CI
+name: Delete Preview CI
 
-on: [push]
+on:
+  pull_request:
+    types: [closed]
 
 jobs:
-  deploy_preview:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip deploy]')"
+  delete_preview:
+    # this job will only run if the PR has been merged
+    if: github.event.pull_request.merged == true
 
     runs-on: ubuntu-latest
 
@@ -28,20 +31,12 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      - run: npm run preview:build
-
-      - name: Surge Deploy
+      - name: Surge Down
         env:
           PROJECT_NAME: 'yc-tw-theme'
           BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        run: npm run preview:deploy
+        run: npm run preview:down
 
-      - name: Add comment to Pull Request
-        if: github.ref != 'refs/heads/main'
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          msg: ${{ format('Your preview application is ready in http://yc-tw-theme-{0}.surge.sh', steps.extract_branch.outputs.branch) }}
-          check_for_duplicate_msg: true
+      - run: |
+          echo Preview application #${{ github.event.number }} has been deleted
