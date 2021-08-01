@@ -11,6 +11,9 @@ const customTheme = {
       1.5: '12px',
     },
   },
+  corePlugins: {
+    float: false,
+  },
 }
 
 module.exports = customTheme
