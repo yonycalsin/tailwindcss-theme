@@ -36,7 +36,9 @@ jobs:
           PROJECT_NAME: 'yc-tw-theme'
           BRANCH_NAME: ${{ github.ref }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        run: npm run preview:down
+        run: |
+          npm run preview:down
+          echo ${{ github.event.pull_request }}
 
       - run: |
           echo Preview application #${{ github.event.number }} has been deleted
