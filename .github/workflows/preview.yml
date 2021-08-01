@@ -43,3 +43,11 @@ jobs:
         with:
           msg: ${{ format('Your preview application is ready in http://yc-tw-theme-{0}.surge.sh', steps.extract_branch.outputs.branch) }}
           check_for_duplicate_msg: true
+
+  delete_preview:
+    # this job will only run if the PR has been merged
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo PR #${{ github.event.number }} has been merged
