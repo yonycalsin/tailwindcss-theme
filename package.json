@@ -40,13 +40,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "arrowParens": "avoid",
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "release": {
     "branches": [
       "main"
@@ -59,7 +52,6 @@
     "prettier-plugin-packagejson": "^2.2.15",
     "semantic-release": "^17.4.4",
     "size-limit": "^5.0.2",
-    "surge": "^0.23.0",
     "tailwind-config-viewer": "^1.6.2",
     "tailwindcss": "^2.2.7",
     "tsdx": "^0.14.1",
