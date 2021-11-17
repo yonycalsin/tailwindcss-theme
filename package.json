@@ -20,17 +20,22 @@
     "dist"
   ],
   "scripts": {
-    "semantic-release": "semantic-release",
+    "analyze": "size-limit --why",
+    "build": "tsdx build",
+    "check:format": "npm run prettier -- --list-different",
+    "check:lint": "tsdx lint",
+    "check:typecheck": "npm run typecheck",
+    "format": "npm run prettier -- --write",
+    "prepare": "tsdx build",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,scss,css,md}\"",
     "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
     "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
     "preview:down": "surge teardown $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "semantic-release": "semantic-release",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "start": "tsdx watch",
+    "test": "tsdx test",
+    "typecheck": "tsc --pretty --noEmit"
   },
   "husky": {
     "hooks": {
@@ -44,10 +49,16 @@
     "singleQuote": true,
     "trailingComma": "all"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
     "husky": "^7.0.1",
-    "prettier-plugin-packagejson": "^2.2.11",
+    "prettier": "^2.4.1",
+    "prettier-plugin-packagejson": "^2.2.15",
     "semantic-release": "^17.4.4",
     "size-limit": "^5.0.2",
     "surge": "^0.23.0",
@@ -62,11 +73,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
   },
   "size-limit": [
     {
