@@ -29,8 +29,6 @@
     "prepare": "tsdx build",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,scss,css,md}\"",
     "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
-    "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
-    "preview:down": "surge teardown $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
     "semantic-release": "semantic-release",
     "size": "size-limit",
     "start": "tsdx watch",
@@ -41,13 +39,6 @@
     "hooks": {
       "pre-commit": "tsdx lint"
     }
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
   },
   "release": {
     "branches": [
@@ -61,7 +52,6 @@
     "prettier-plugin-packagejson": "^2.2.15",
     "semantic-release": "^17.4.4",
     "size-limit": "^5.0.2",
-    "surge": "^0.23.0",
     "tailwind-config-viewer": "^1.6.2",
     "tailwindcss": "^2.2.7",
     "tsdx": "^0.14.1",
