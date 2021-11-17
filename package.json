@@ -29,8 +29,6 @@
     "prepare": "tsdx build",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,scss,css,md}\"",
     "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
-    "preview:deploy": "surge ./preview-build -d $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
-    "preview:down": "surge teardown $PROJECT_NAME-$BRANCH_NAME.surge.sh --token $SURGE_TOKEN",
     "semantic-release": "semantic-release",
     "size": "size-limit",
     "start": "tsdx watch",
