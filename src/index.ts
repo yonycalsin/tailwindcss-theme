@@ -1,10 +1,11 @@
+import merge from 'merge'
 import colors from './colors'
 import spacing from './spacing'
 import fontWeight from './font-weight'
 import fontSize from './font-size'
 import borderRadius from './border-radius'
 
-const customTheme = {
+const customDefaultTheme = {
   darkMode: 'class',
   theme: {
     colors,
@@ -22,6 +23,8 @@ const customTheme = {
   },
 }
 
-module.exports = customTheme
+function withTailwindCssTheme(options: any) {
+  return merge.recursive(true, customDefaultTheme, options)
+}
 
-export default customTheme
+export { colors, spacing, fontWeight, fontSize, borderRadius, withTailwindCssTheme }
