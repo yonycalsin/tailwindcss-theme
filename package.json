@@ -28,7 +28,7 @@
     "format": "npm run prettier -- --write",
     "prepare": "tsdx build",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,scss,css,md}\"",
-    "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./dist/index.js",
+    "preview:build": "npm run build && npx tailwind-config-viewer export ./preview-build --config ./scripts/tailwind-config-viewer.js",
     "semantic-release": "semantic-release",
     "size": "size-limit",
     "start": "tsdx watch",
@@ -44,6 +44,9 @@
     "branches": [
       "main"
     ]
+  },
+  "dependencies": {
+    "merge": "^2.1.1"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
@@ -73,8 +76,5 @@
       "path": "dist/tailwindcss-theme.esm.js",
       "limit": "10 KB"
     }
-  ],
-  "dependencies": {
-    "merge": "^2.1.1"
-  }
+  ]
 }
